@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body class="bg-success">
+
+    <section id="dashboard" class="py-5 text-white">
+    <div class="container">
+        <h2 class="text-center mb-4 fw-bold">Painel de Controle</h2>
+        
+        <div class="row g-4 mb-5">
+            <div class="col-md-4">
+                <div class="card bg-dark text-white p-3 border-secondary">
+                    <h5>Ganhos Totais</h5>
+                    <h3 class="text-success" id="totalGanhos">R$ 0,00</h3>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-dark text-white p-3 border-secondary">
+                    <h5>Gastos Totais</h5>
+                    <h3 class="text-danger" id="totalGastos">R$ 0,00</h3>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-dark text-white p-3 border-secondary">
+                    <h5>Item Mais Vendido</h5>
+                    <h3 class="text-warning" id="maisVendido">-</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card bg-dark p-4 border-secondary">
+                    <h4 class="text-center mb-3">Vendas por Produto</h4>
+                    <canvas id="graficoVendas"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    function carregarDados() {
+        
+        const dadosIniciais = {
+            ganhos: 15825.00,
+            gastos: 6500.00,
+            itemMaisVendido: "Camiseta Medusa FPS",
+            vendasPorItem: {
+                "Camiseta Medusa FPS": 40,
+                "Controle Medusa": 15,
+                "Mouse Medusa": 25,
+                "Óculos Inteligente": 2
+            }
+        };
+
+        
+        let dadosSalvos = localStorage.getItem('dadosLoja');
+        if (!dadosSalvos) {
+            localStorage.setItem('dadosLoja', JSON.stringify(dadosIniciais));
+            dadosSalvos = JSON.stringify(dadosIniciais);
+        }
+
+        const dados = JSON.parse(dadosSalvos);
+
+        
+        const elGanhos = document.getElementById('totalGanhos');
+        const elGastos = document.getElementById('totalGastos');
+        const elMaisVendido = document.getElementById('maisVendido');
+
+        if (elGanhos) elGanhos.innerText = `R$ ${Number(dados.ganhos).toFixed(2)}`;
+        if (elGastos) elGastos.innerText = `R$ ${Number(dados.gastos).toFixed(2)}`;
+        if (elMaisVendido) elMaisVendido.innerText = dados.itemMaisVendido;
+
+        
+        const canvas = document.getElementById('graficoVendas');
+        if (!canvas) return;
+
+        const ctx = canvas.getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: Object.keys(dados.vendasPorItem),
+                datasets: [{
+                    label: 'Unidades Vendidas',
+                    data: Object.values(dados.vendasPorItem),
+                    backgroundColor: '#25cff2'
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+    }
+
+    
+    document.addEventListener('DOMContentLoaded', carregarDados);
+</script>
+<script>
+    function atualizarPainelAdmin() {
+    const dadosSalvos = localStorage.getItem('dadosLoja');
+    if (!dadosSalvos) return;
+
+    const dados = JSON.parse(dadosSalvos);
+
+
+    document.getElementById('totalGanhos').innerText = `R$ ${Number(dados.ganhos).toFixed(2)}`;
+    document.getElementById('totalGastos').innerText = `R$ ${Number(dados.gastos).toFixed(2)}`;
+    document.getElementById('maisVendido').innerText = dados.itemMaisVendido;
+
+   
+    if (window.meuGrafico) window.meuGrafico.destroy();
+
+    const ctx = document.getElementById('graficoVendas').getContext('2d');
+    window.meuGrafico = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: Object.keys(dados.vendasPorItem),
+            datasets: [{
+                label: 'Unidades Vendidas',
+                data: Object.values(dados.vendasPorItem),
+                backgroundColor: '#198754'
+            }]
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', atualizarPainelAdmin);
+</script>
+
+</html>

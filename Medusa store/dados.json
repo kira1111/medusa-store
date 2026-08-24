@@ -1,0 +1,11 @@
+{
+  "ganhos": 15825.00,
+  "gastos": 6500.00,
+  "itemMaisVendido": "Camiseta Medusa FPS",
+  "vendasPorItem": {
+    "Camiseta Medusa FPS": 40,
+    "Controle Medusa": 15,
+    "Mouse Medusa": 25,
+    "Óculos Inteligente": 2
+  }
+}

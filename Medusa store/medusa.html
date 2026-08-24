@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medusa Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+        .card-img-top {
+            height: 280px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body class="bg-black">
+    <nav class="navbar navbar-expand-lg bg-success navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand">🐍Medusa Store</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav w-100">
+                    <a class="nav-link active" aria-current="page" href="medusa.html">Home</a>
+                    <a class="nav-link" href="Medusa - Site/Index.html">sites</a>
+                    <a class="nav-link" href="sobre.html">sobre</a>
+                    <a class="nav-link" href="apoie.html">apoie</a>
+
+
+                    <div id="user-area" class="ms-auto d-flex align-items-center">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="modal fade" id="modalAdmin" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-white border-secondary">
+                <div class="modal-header border-secondary">
+                    <h5 class="modal-title fw-bold">🐍 Acesso Administrativo</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formAdminLogin">
+                        <div class="mb-3">
+                            <label class="form-label">Senha de Acesso</label>
+                            <input type="password" id="senhaAdmin" class="form-control bg-secondary text-white border-0"
+                                placeholder="Digite a senha" required>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-success">Entrar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <div class="row g-4">
+
+            <div class="col-12 col-md-4 card-group">
+                <div class="card h-100 shadow-sm border-0 ">
+                    <img src="imagens/medusafpscamisa.jfif" class="card-img-top" alt="Medusa FPS camiseta">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Camiseta Medusa FPS</h5>
+                        <p class="card-text">Algodão especial para seu conforto.</p>
+                        <span class="badge bg-success">R$ 50,00</span>
+                        <a href="camisa1.html" class="btn btn-primary">Compre</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4 card-group">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="imagens/icrocamisa.jfif" class="card-img-top" alt="Ícaro camiseta">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Camiseta Ícaro</h5>
+                        <p class="card-text">Sinta-se nas nuvens com essa novidade.</p>
+                        <span class="badge bg-success">R$ 50,00</span>
+                        <a href="#" class="btn btn-primary">Compre</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4 card-group">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="imagens/medusarunnercamisa.jfif" class="card-img-top" alt="Medusa Runner camiseta">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Camiseta Medusa Runner</h5>
+                        <p class="card-text">Nenhuma moda passageira vai alcançar seu estilo com essa camiseta única.
+                        </p>
+                        <span class="badge bg-success">R$ 50,00</span>
+                        <a href="#" class="btn btn-primary">Compre</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4 card-group">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="imagens/camisamirrordestroyer.jfif" class="card-img-top" alt="Mirror destroyer camiseta">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Camiseta Mirror destroyer</h5>
+                        <p class="card-text">Sinta-se poderoso e capaz de superar qualquer obstaculo com esta camisa.
+                        </p>
+                        <span class="badge bg-success">R$ 50,00</span>
+                        <a href="#" class="btn btn-primary">Compre</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4 card-group">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="imagens/controlemedusa.jfif" class="card-img-top" alt="Controle de videogame medusa">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Controle de videogame medusa</h5>
+                        <p class="card-text">Controle com o melhor tempo de resposta da atualidade.
+                        </p>
+                        <span class="badge bg-success">R$ 150,00</span>
+                        <a href="#" class="btn btn-primary">Compre</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4 card-group">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="imagens/mousemedusa.jfif" class="card-img-top" alt="Mouse medusa">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Mouse medusa</h5>
+                        <p class="card-text">Saiba que com este mouse, perder nunca é opção.
+                        </p>
+                        <span class="badge bg-success">R$ 35,00</span>
+                        <a href="#" class="btn btn-primary">Compre</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4 card-group">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="imagens/tecladomedusa.jfif" class="card-img-top" alt="Teclado medusa">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Teclado medusa</h5>
+                        <p class="card-text">Este poderoso teclado separa quem sabe de quem não sabe.
+                        </p>
+                        <span class="badge bg-success">R$ 50,00</span>
+                        <a href="#" class="btn btn-primary">Compre</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4 card-group">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="imagens/fonemedusa.jfif" class="card-img-top" alt="Fone de ouvido medusa">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Fone de ouvido medusa</h5>
+                        <p class="card-text">Escutará antes mesmo de acontecer, este fone é de qualidade futura.
+                        </p>
+                        <span class="badge bg-success">R$ 30,00</span>
+                        <a href="#" class="btn btn-primary">Compre</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4 card-group">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="imagens/celularmedusa.jfif" class="card-img-top" alt="Celular medusa">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Celular medusa</h5>
+                        <p class="card-text">Celular poderoso capaz de rodar até 5 jogos ao mesmo tempo <br>
+                            (testado somente com GTA VII, Valorant 2, Minecraft 3, Medusa FPS e Far Cry 16).
+                        </p>
+                        <span class="badge bg-success">R$ 1650,00</span>
+                        <a href="#" class="btn btn-primary">Compre</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4 card-group">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="imagens/aliancamedusa.jfif" class="card-img-top" alt="Aliança medusa">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Aliança medusa</h5>
+                        <p class="card-text">Essa aliança deixará ela(e) tão surpresa(o) que congelará feito pedra.
+                        </p>
+                        <span class="badge bg-success">R$ 150,00</span>
+                        <a href="#" class="btn btn-primary">Compre</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4 card-group">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="imagens/oculosmedusa.jfif" class="card-img-top" alt="Óculos inteligente medusa">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Óculos inteligente medusa</h5>
+                        <p class="card-text">Este óculos inteligente consegue te entregar a resposta de qualquer coisa
+                            que você ver <br>
+                            (você não vê seu próprio reflexo).
+                        </p>
+                        <span class="badge bg-success">R$ 5350,00</span>
+                        <a href="#" class="btn btn-primary">Compre</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4 card-group">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="imagens/microfonemedusa.jfif" class="card-img-top" alt="Microfone medusa">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Microfone medusa</h5>
+                        <p class="card-text">Faça com que todos ouçam sua voz.
+                        </p>
+                        <span class="badge bg-success">R$ 150,00</span>
+                        <a href="#" class="btn btn-primary">Compre</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <section id="contato" class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card p-4 shadow border-0">
+                        <h3 class="text-center mb-4 fw-bold">Fale Conosco</h3>
+                        <form action="https://formsubmit.co/rodrigoaciard@gmail.com" method="POST">
+                            <div class="mb-3">
+                                <label class="form-label">Nome Completo</label>
+                                <input type="text" class="form-control" placeholder="Seu nome">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">E-mail</label>
+                                <input type="email" class="form-control" placeholder="nome@exemplo.com">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Mensagem</label>
+                                <textarea class="form-control" rows="3" placeholder="Em que podemos ajudar?"></textarea>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-dark btn-lg">Enviar Mensagem</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p class="text-center">© Medusa - Todos os direitos reservados.</p>
+    </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script>
+        const modalAdminElement = document.getElementById('modalAdmin');
+        const modalAdmin = new bootstrap.Modal(modalAdminElement);
+
+
+        document.addEventListener('keydown', (event) => {
+
+            if (['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
+                return;
+            }
+
+            if (event.key === ';') {
+                event.preventDefault();
+                modalAdmin.show();
+            }
+        });
+
+        document.getElementById('formAdminLogin').addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const senhaDigitada = document.getElementById('senhaAdmin').value;
+            const senhaCorreta = "medusa123";
+
+            if (senhaDigitada === senhaCorreta) {
+                window.location.href = 'administrador.html';
+            } else {
+                alert('Senha incorreta!');
+                document.getElementById('senhaAdmin').value = '';
+            }
+        });</script>
+
+
+   
+<div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="modalLoginLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalLoginLabel">Medusa Store</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      
+      <div id="modal-content-area"></div>
+    </div>
+  </div>
+</div>
+
+
+   <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const userArea = document.getElementById("user-area");
+    const modalContentArea = document.getElementById("modal-content-area");
+
+    
+    function atualizarNavbar() {
+        const usuarioLogado = localStorage.getItem("usuarioNome");
+
+        if (usuarioLogado) {
+            userArea.innerHTML = `
+                <span class="text-white me-3">Olá, <strong>${usuarioLogado}</strong>!</span>
+                <button id="btnSair" class="btn btn-sm btn-outline-light">Sair</button>
+            `;
+            document.getElementById("btnSair").addEventListener("click", function() {
+                localStorage.removeItem("usuarioNome");
+                atualizarNavbar();
+            });
+        } else {
+            userArea.innerHTML = `
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalLogin">
+                    Login
+                </button>
+            `;
+        }
+    }
+
+    
+    function mostrarTelaLogin() {
+        modalContentArea.innerHTML = `
+            <div class="modal-body">
+                <form id="loginForm">
+                    <div class="mb-3">
+                        <label for="loginEmail" class="form-label">E-mail</label>
+                        <input type="email" class="form-control" id="loginEmail" placeholder="seu@email.com" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="loginSenha" class="form-label">Senha</label>
+                        <input type="password" class="form-control" id="loginSenha" placeholder="Sua senha" required>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-success">Entrar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer d-flex flex-column align-items-center">
+                <span class="text-muted small mb-2">Não tem uma conta ainda?</span>
+                <button type="button" id="btnIrParaCadastro" class="btn btn-outline-secondary btn-sm w-100">Criar uma nova conta</button>
+            </div>
+        `;
+
+        
+        document.getElementById("btnIrParaCadastro").addEventListener("click", mostrarTelaCadastro);
+
+        
+        document.getElementById("loginForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById("loginEmail").value;
+            const nomeSimulado = email.split('@')[0]; 
+            
+            fazerLogin(nomeSimulado);
+        });
+    }
+
+    
+    function mostrarTelaCadastro() {
+        modalContentArea.innerHTML = `
+            <div class="modal-body">
+                <form id="cadastroForm">
+                    <div class="mb-3">
+                        <label for="cadNome" class="form-label">Nome Completo</label>
+                        <input type="text" class="form-control" id="cadNome" placeholder="Ex: João Silva" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="cadEmail" class="form-label">E-mail</label>
+                        <input type="email" class="form-control" id="cadEmail" placeholder="seu@email.com" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="cadSenha" class="form-label">Crie uma Senha</label>
+                        <input type="password" class="form-control" id="cadSenha" placeholder="Mínimo 6 caracteres" required>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary">Cadastrar e Entrar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer d-flex flex-column align-items-center">
+                <span class="text-muted small mb-2">Já possui uma conta?</span>
+                <button type="button" id="btnIrParaLogin" class="btn btn-outline-secondary btn-sm w-100">Fazer Login</button>
+            </div>
+        `;
+
+       
+        document.getElementById("btnIrParaLogin").addEventListener("click", mostrarTelaLogin);
+
+        
+        document.getElementById("cadastroForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            const nomeDigitado = document.getElementById("cadNome").value;
+            
+            fazerLogin(nomeDigitado);
+        });
+    }
+
+    
+    function fazerLogin(nome) {
+        localStorage.setItem("usuarioNome", nome);
+        
+        
+        const modalElement = document.getElementById('modalLogin');
+        const modalInstance = bootstrap.Modal.getInstance(modalElement);
+        if (modalInstance) modalInstance.hide();
+        
+        atualizarNavbar();
+    }
+
+   
+    atualizarNavbar();
+    mostrarTelaLogin();
+});
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camisa Medusa FPS - Medusa Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body class="bg-black text-white">
+
+    
+    <nav class="navbar navbar-expand-lg bg-success navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="medusa.html">🐍 Medusa Store</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav w-100">
+                    <a class="nav-link" href="medusa.html">Home</a>
+                    <a class="nav-link" href="Medusa - Site/Index.html">sites</a>
+                    <a class="nav-link" href="sobre.html">sobre</a>
+                    <a class="nav-link" href="apoie.html">apoie</a>
+
+                    <div id="user-area" class="ms-auto d-flex align-items-center">
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    
+    <main class="container py-5">
+        <div class="row g-4 align-items-center">
+            
+            
+            <div class="col-md-6 text-center">
+                <div class="card bg-dark border-secondary p-3 shadow-lg">
+                    <img src="imagens/medusafpscamisa.jfif" alt="Camisa Medusa FPS" class="img-fluid rounded mx-auto" style="max-height: 550px; object-fit: contain;">
+                </div>
+            </div>
+
+            
+            <div class="col-md-6">
+                <span class="badge bg-success mb-2 fs-6">Mais Vendido</span>
+                <h1 class="fw-bold display-5">Camisa Medusa FPS</h1>
+                
+                
+                <div class="mb-3 text-warning">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-half"></i>
+                    <span class="text-secondary ms-2 small">(40 vendas realizadas)</span>
+                </div>
+
+                
+                <div class="mb-4">
+                    <span class="text-secondary text-decoration-line-through me-2 fs-5">R$ 79,90</span>
+                    <span class="display-6 fw-bold text-success">R$ 50,00</span>
+                    <small class="d-block text-secondary">em até 3x sem juros no cartão</small>
+                </div>
+
+                
+                <div class="mb-4">
+                    <label class="form-label fw-bold">Tamanho:</label>
+                    <div class="btn-group w-100" role="group" aria-label="Seleção de Tamanho">
+                        <input type="radio" class="btn-check" name="tamanho" id="tam-p" autocomplete="off">
+                        <label class="btn btn-outline-success" for="tam-p">P</label>
+
+                        <input type="radio" class="btn-check" name="tamanho" id="tam-m" autocomplete="off" checked>
+                        <label class="btn btn-outline-success" for="tam-m">M</label>
+
+                        <input type="radio" class="btn-check" name="tamanho" id="tam-g" autocomplete="off">
+                        <label class="btn btn-outline-success" for="tam-g">G</label>
+
+                        <input type="radio" class="btn-check" name="tamanho" id="tam-gg" autocomplete="off">
+                        <label class="btn btn-outline-success" for="tam-gg">GG</label>
+                    </div>
+                </div>
+
+                
+                <div class="row g-2 mb-4">
+                    <div class="col-3 col-sm-2">
+                        <input type="number" id="qtdProduto" class="form-control form-control-lg bg-dark text-white border-secondary text-center" value="1" min="1">
+                    </div>
+                    <div class="col-9 col-sm-10">
+                        <button class="btn btn-success btn-lg w-100 fw-bold" onclick="comprarProduto()">
+                            <i class="bi bi-cart-plus me-2"></i> Adicionar ao Carrinho
+                        </button>
+                    </div>
+                </div>
+
+                
+                <div class="border-top border-secondary pt-3 text-secondary small">
+                    <p class="mb-1"><i class="bi bi-truck me-2 text-success"></i> Frete grátis para todo o Brasil</p>
+                    <p class="mb-0"><i class="bi bi-shield-check me-2 text-success"></i> Tecido premium respirável de alta durabilidade</p>
+                </div>
+            </div>
+
+        </div>
+
+        
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="card bg-dark border-secondary p-4">
+                    <h4 class="fw-bold text-success mb-3">Descrição do Produto</h4>
+                    <p class="text-secondary mb-0">
+                        A **Camisa Medusa FPS** foi criada especialmente para garantir conforto e mobilidade máxima durante longas sessões de jogo. Feita em tecido Dry-Fit leve e de secagem rápida, traz a estampa exclusiva em serigrafia de alta resistência.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+       function comprarProduto() {
+
+    const qtd = parseInt(document.getElementById('qtdProduto').value) || 1;
+    
+    const nomeProduto = document.querySelector('h1').innerText.trim();
+    
+    const precoTexto = document.querySelector('.text-success.display-6, .text-success.fs-2').innerText;
+    const precoUnitario = parseFloat(precoTexto.replace('R$', '').replace('.', '').replace(',', '.').trim()) || 0;
+
+    const totalCompra = qtd * precoUnitario;
+
+    let dadosSalvos = localStorage.getItem('dadosLoja');
+    let dados = dadosSalvos ? JSON.parse(dadosSalvos) : {
+        ganhos: 0,
+        gastos: 1200.00,
+        itemMaisVendido: "-",
+        vendasPorItem: {}
+    };
+
+    dados.ganhos = (Number(dados.ganhos) || 0) + totalCompra;
+
+    if (!dados.vendasPorItem[nomeProduto]) {
+        dados.vendasPorItem[nomeProduto] = 0;
+    }
+    dados.vendasPorItem[nomeProduto] += qtd;
+
+    let maisVendido = "";
+    let maiorQtd = 0;
+    for (const [item, quantidade] of Object.entries(dados.vendasPorItem)) {
+        if (quantidade > maiorQtd) {
+            maiorQtd = quantidade;
+            maisVendido = item;
+        }
+    }
+    dados.itemMaisVendido = maisVendido;
+
+    localStorage.setItem('dadosLoja', JSON.stringify(dados));
+
+    alert(`Compra de ${qtd}x "${nomeProduto}" realizada com sucesso!\nTotal: R$ ${totalCompra.toFixed(2)}`);
+}
+    </script>
+</body>
+
+</html>

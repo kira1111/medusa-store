@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medusa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Exo+2:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+  <!-- ===== TOPBAR ===== -->
+  <header id="topbar">
+    <div class="emblem">
+      <span class="emblem-snake">🐍</span>
+    </div>
+
+    <div class="topbar-brand">
+      <div class="brand-name">Medusa</div>
+      <div class="brand-sub">Plataforma de Jogos Indies</div>
+    </div>
+
+    <div class="topbar-divider"></div>
+
+    <div class="topbar-status">
+      <div class="status-dot"></div>
+      online
+    </div>
+
+    <div class="topbar-right">
+      <div class="topbar-tag">Beta</div>
+      <button class="login-btn" onclick="openLogin()">Login</button>
+    </div>
+  </header>
+
+  <!-- ===== LAYOUT ===== -->
+  <div id="layout">
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside id="sidebar">
+
+      <!-- Equipe -->
+      <div class="sidebar-section">
+        <div class="sidebar-label">Equipe</div>
+        <div class="member-list" id="member-list">
+
+          <div class="member">
+
+            <img class="member-avatar" src="imgs/mateus.png" alt="MP">
+
+            <div class="member-info">
+              <span class="member-name">Mateus Pinha</span>
+              <span class="member-role">Programador</span>
+            </div>
+
+          </div>
+
+          <div class="member">
+
+            <img class="member-avatar" src="imgs/emanuel.webp" alt="E">
+
+            <div class="member-info">
+              <span class="member-name">Emanuel</span>
+              <span class="member-role">Programador</span>
+            </div>
+
+          </div>
+
+          <div class="member">
+
+            <img class="member-avatar" src="imgs/rodrigo.jpg" alt="R">
+
+            <div class="member-info">
+              <span class="member-name">Rodrigo</span>
+              <span class="member-role">Game Dev</span>
+            </div>
+
+          </div>
+
+          <div class="member">
+
+            <img class="member-avatar" src="imgs/max.jpg" alt="S">
+
+            <div class="member-info">
+              <span class="member-name">Sarah</span>
+              <span class="member-role">Desenhista</span>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Busca -->
+      <div class="sidebar-section">
+        <div class="sidebar-label">Buscar Jogo</div>
+        <div class="search-wrap">
+          <span class="search-icon">🔍</span>
+          <input
+            class="search-input"
+            type="text"
+            id="search-input"
+            placeholder="Digite o nome..."
+            autocomplete="off"
+          >
+        </div>
+      </div>
+
+      <div class="sidebar-spacer"></div>
+
+      <!-- Sobre Nós -->
+      <div class="sidebar-section">
+        <button class="about-btn" onclick="openAbout()">Sobre Nós</button>
+      </div>
+
+      <!-- Feedback -->
+      <div class="sidebar-section">
+        <div class="sidebar-label">Sugestões</div>
+        <div class="feedback-wrap">
+          <textarea
+            class="feedback-textarea"
+            id="feedback-text"
+            placeholder="Mande uma sugestão para os desenvolvedores"
+            maxlength="300"
+          ></textarea>
+          <button class="feedback-btn" onclick="sendFeedback()">Enviar</button>
+          <div class="feedback-notice"></div>
+        </div>
+      </div>
+
+      <div class="sidebar-footer">
+        MEDUSA © 2026 &nbsp;·&nbsp; Todos os direitos reservados
+      </div>
+    </aside>
+
+    <!-- ===== MAIN ===== -->
+    <main id="main">
+      <div class="main-header">
+        <div class="main-title">Jogos Disponíveis</div>
+        <div class="main-count" id="game-count">0 jogos</div>
+      </div>
+      <div class="main-divider"></div>
+
+      <div id="games-grid">
+        <!--
+          COMO ADICIONAR UM JOGO:
+          <a class="game-card" href="jogos/meu-jogo/index.html">
+            <div class="card-thumb">🎮</div>
+            <div class="card-body">
+              <div class="card-title">Nome do Jogo</div>
+              <div class="card-desc">Breve descrição do jogo aqui.</div>
+              <div class="card-footer">
+                <span class="card-tag">Categoria</span>
+                <span class="card-arrow">→</span>
+              </div>
+            </div>
+          </a>
+        -->
+        <a class="game-card" href="https://download1587.mediafire.com/86lb3cotsb6gEFV2EzjrMj4AkbpTNHRdqDV_FgwE5rj3XG4MG-3VJyJXkHMYPoawtCn2ruI3-VueKmP9PGV2BcPqLsQwEUkMvgtNWFjMZfwzexLAy64igJB7dZtKiuflblDJQAlhXWZZSY3Bd2UIKvjF1aws71DYPD-NQt0gp7oajw/8eupflx2mswr8zc/jogo+do+icro.zip">
+            <div class="card-thumb"><img src="imgs/icaroo.png" alt=""></div>
+            <div class="card-body">
+              <div class="card-title">Flappy Ícaro</div>
+              <div class="card-desc">Desvie dos obstáculos</div>
+              <br>
+              <br>
+              <div class="card-footer">
+                <span class="card-tag">Indie</span>
+                <span class="card-arrow">→</span>
+              </div>
+            </div>
+          </a>
+          
+          <a class="game-card" href="https://download1072.mediafire.com/hfkz2zsn04hgBMTNDCvB9J9zjadAePeu6RZAWR-W9iPe5p9GfPQ8Lb5rzl3WpauXJ2WHHWcy3l7XAZd5vIG7gQMc2rKQ6_gUV9GEk7FG1YNm3c4sU1FU1Otljm1LpOEN_5Mwmn5lWrZ9V27JwKotj7gOkyXchKbntV64HuJLW9bjHw/10uwnwyruag0d0c/jogo+da+croba.zip">
+            <div class="card-thumb"><img src="imgs/runner.png" alt=""></div>
+            <div class="card-body">
+              <div class="card-title">Medusa Runner</div>
+              <div class="card-desc">Pule os espelhos</div>
+              <br>
+              <br>
+              <div class="card-footer">
+                <span class="card-tag">Indie</span>
+                <span class="card-arrow">→</span>
+              </div>
+            </div>
+          </a>
+
+          <a class="game-card" href="https://download1076.mediafire.com/9sgxwowtpk4gIgwf9KCFmfCcfAqEQGwGU7F6s9W3kOun7mURAVOnvCHbDypXovN1A8LzxZnhZOxZCwPKVtWemdiPcVHspdZOsycdRTgybjn8B2i8iNleVW2H5kK7G6vfqZqfT9pOaroMklkND7agR3oiBvfM-QyMJMEmr_LtZd5ZJw/z1ly15zub3irxvi/invadidores+do+espa%C3%A7o.zip">
+            <div class="card-thumb"><img src="imgs/mirror.png" alt=""></div>
+            <div class="card-body">
+              <div class="card-title">Mirror Destroyer</div>
+              <div class="card-desc">Acabe com os espelhos,antes que eles acabem com <strong>VOCÊ!</strong></div>
+              <div class="card-footer">
+                <span class="card-tag">Indie</span>
+                <span class="card-arrow">→</span>
+              </div>
+            </div>
+          </a>
+
+          <a class="game-card" href="https://www.mediafire.com/file/scb0ru1jpl01zht/minecraft.zip/file">
+            <div class="card-thumb"><img src="imgs/FPS.png" alt=""></div>
+            <div class="card-body">
+              <div class="card-title">FPS Medusa</div>
+              <div class="card-desc">Destrua tudo e todos.</div>
+              <br>
+              <br>
+              <div class="card-footer">
+                <span class="card-tag">Indie</span>
+                <span class="card-arrow">→</span>
+              </div>
+            </div>
+          </a>
+        <div id="no-results">
+          <span>🎮</span>
+          <p id="no-results-msg">Nenhum jogo cadastrado ainda.</p>
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+  <!-- ===== MODAL: SOBRE NÓS ===== -->
+  <div id="modal-about" class="modal-overlay" onclick="closeModalOnOverlay(event, 'modal-about')">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('modal-about')">✕</button>
+
+      <div class="modal-header">
+        <div class="modal-emblem">🐍</div>
+        <h2 class="modal-title">Sobre Nós</h2>
+        <p class="modal-subtitle">Conheça o projeto e a equipe por trás da Medusa</p>
+      </div>
+
+      <div class="about-section">
+        <h3 class="about-heading">O Projeto</h3>
+        <p class="about-text">
+          A <strong>Medusa</strong> é uma plataforma criada para reunir e divulgar jogos
+          independentes desenvolvidos pela nossa equipe. O objetivo é oferecer um espaço
+          centralizado onde qualquer pessoa possa descobrir, jogar e acompanhar os projetos
+          que criamos com dedicação — tudo em um único lugar, com uma interface limpa e moderna.
+        </p>
+        <p class="about-text">
+          Este projeto nasceu como trabalho escolar. Cada membro contribui com suas habilidades
+          únicas para que a plataforma funcione de ponta a ponta.
+        </p>
+      </div>
+
+      <div class="about-section">
+        <h3 class="about-heading">A Equipe</h3>
+        <div class="about-members">
+
+          <div class="about-member">
+            <img class="about-member-avatar" src="imgs/mateus.png" alt="Mateus Pinha">
+            <div class="about-member-info">
+              <span class="about-member-name">Mateus Pinha</span>
+              <span class="about-member-role">Programador</span>
+              <span class="about-member-desc">Responsável pela estrutura e lógica do front-end da plataforma.</span>
+            </div>
+          </div>
+
+          <div class="about-member">
+            <img class="about-member-avatar" src="imgs/emanuel.webp" alt="Emanuel">
+            <div class="about-member-info">
+              <span class="about-member-name">Emanuel</span>
+              <span class="about-member-role">Programador</span>
+              <span class="about-member-desc">Cuida da integração entre os jogos e a plataforma principal.</span>
+            </div>
+          </div>
+
+          <div class="about-member">
+            <img class="about-member-avatar" src="imgs/rodrigo.jpg"" alt="Rodrigo">
+            <div class="about-member-info">
+              <span class="about-member-name">Rodrigo</span>
+              <span class="about-member-role">Game Dev</span>
+              <span class="about-member-desc">Desenvolve os jogos que são publicados na plataforma.</span>
+            </div>
+          </div>
+
+          <div class="about-member">
+            <img class="about-member-avatar" src="imgs/max.jpg" alt="Sarah">
+            <div class="about-member-info">
+              <span class="about-member-name">Sarah</span>
+              <span class="about-member-role">Desenhista</span>
+              <span class="about-member-desc">Cria a identidade visual.</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== MODAL: LOGIN ===== -->
+  <div id="modal-login" class="modal-overlay" onclick="closeModalOnOverlay(event, 'modal-login')">
+    <div class="modal-box modal-box--small">
+      <button class="modal-close" onclick="closeModal('modal-login')">✕</button>
+
+      <div class="modal-header">
+        <div class="modal-emblem">🐍</div>
+        <h2 class="modal-title">Entrar</h2>
+        <p class="modal-subtitle">Acesse sua conta para salvar seu progresso</p>
+      </div>
+
+      <div id="login-form-view">
+        <div class="form-group">
+          <label class="form-label">E-mail</label>
+          <input class="form-input" type="email" id="login-email" placeholder="seu@email.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Senha</label>
+          <input class="form-input" type="password" id="login-pass" placeholder="••••••••">
+        </div>
+        <button class="form-submit-btn" onclick="handleLogin()">Entrar</button>
+        <p class="form-switch">Não tem conta? <span class="form-link" onclick="showRegister()">Cadastre-se</span></p>
+        <p class="form-notice">⚠ Sistema de autenticação em breve — login decorativo por ora</p>
+      </div>
+
+      <div id="register-form-view" style="display:none">
+        <div class="form-group">
+          <label class="form-label">Nome</label>
+          <input class="form-input" type="text" id="reg-name" placeholder="Seu nome">
+        </div>
+        <div class="form-group">
+          <label class="form-label">E-mail</label>
+          <input class="form-input" type="email" id="reg-email" placeholder="seu@email.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Senha</label>
+          <input class="form-input" type="password" id="reg-pass" placeholder="••••••••">
+        </div>
+        <button class="form-submit-btn" onclick="handleRegister()">Criar conta</button>
+        <p class="form-switch">Já tem conta? <span class="form-link" onclick="showLogin()">Entrar</span></p>
+        <p class="form-notice">⚠ Sistema de autenticação em breve — cadastro decorativo por ora</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Toast de feedback -->
+  <div id="toast">✓ Sugestão recebida — obrigado!</div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
